@@ -1,0 +1,155 @@
+/* ernalink 製品サイト共通スタイル。
+   従来は各 HTML に同じ CSS を丸ごと複製していたため、1箇所の修正が4ファイルに波及していた。
+   ハブページ追加にあわせて共通化する。 */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.8;
+}
+
+header {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+}
+
+header p {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #aab;
+}
+
+main {
+  max-width: 760px;
+  margin: 48px auto;
+  padding: 0 24px 80px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 48px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+h2 {
+  font-size: 1.05rem;
+  color: #1a1a2e;
+  border-left: 4px solid #4f8ef7;
+  padding-left: 12px;
+  margin: 36px 0 12px;
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+ul {
+  margin: 8px 0 12px 20px;
+  font-size: 0.95rem;
+}
+
+ul li {
+  margin-bottom: 6px;
+}
+
+.badge {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #1a5cc8;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.updated {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  padding: 24px;
+}
+
+a {
+  color: #1a5cc8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── パンくず（各ページからハブへ戻る導線） ── */
+.crumb {
+  max-width: 760px;
+  margin: 24px auto -24px;
+  padding: 0 24px;
+  font-size: 0.85rem;
+}
+
+/* ── ハブページ：製品カード ── */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.product {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+.product h2 {
+  margin-top: 0;
+}
+
+.product .desc {
+  color: #667;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.product ul {
+  list-style: none;
+  margin: 0;
+}
+
+.product ul li {
+  margin-bottom: 8px;
+}
+
+.product ul li a::before {
+  content: "→ ";
+  color: #4f8ef7;
+}
